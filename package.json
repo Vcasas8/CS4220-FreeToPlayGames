@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Vcasas8/CS4220-FreeToPlayGames/issues"
   },
-  "homepage": "https://github.com/Vcasas8/CS4220-FreeToPlayGames#readme"
+  "homepage": "https://github.com/Vcasas8/CS4220-FreeToPlayGames#readme",
+  "dependencies": {
+    "commander": "^14.0.3"
+  }
 }
