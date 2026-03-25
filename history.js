@@ -15,7 +15,7 @@ import path from 'path';
 import url from 'url';
 
 // get the file path for search_history.json
-const __filename = url.fileURLtoPath(import.meta.url);
+const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const filePath = path.resolve(__dirname, 'search_history.json');
 
