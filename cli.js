@@ -1,4 +1,4 @@
-/*
+/* Author: Vivian Casas
 Objectives for cli.js
 
 -> Help Menu
