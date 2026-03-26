@@ -1,6 +1,5 @@
-/*
+/* Author: Annie Lin
 Objectives for api.js
-Code by: Annie Lin
 
 -> Search API by Keyword
     + Accepts a keyword as an argument
