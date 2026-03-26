@@ -1,4 +1,4 @@
-/**
+/* Author: Austin Wong
 Objectives for app.js
 
 -> Search Functionality
