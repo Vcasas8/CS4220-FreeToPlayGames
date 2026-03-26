@@ -21,6 +21,7 @@ import { searchGames, showHistory } from "./app.js";
 
 const program = new Command();
 
+// HELP MENU
 program
   .name("freetogame-cli")
   .description("CLI tool for searching FreeToGame API")
@@ -41,14 +42,15 @@ program
 
 // HISTORY COMMAND
 program
-  .command("history")
+  .command("history <arg>")
   .description("Show previously searched keywords")
-  .action(() => {
-    try {
-      showHistory();
-    } catch (err) {
-      console.error("Error showing history:", err.message);
+  .action((arg) => {
+    if (arg !== "keywords") {
+      console.error("Invalid argument. \nUse: history keywords");
+      return;
     }
+
+    showHistory();
   });
 
 // Parse CLI arguments
