@@ -55,6 +55,5 @@ export const addToSearchHistory = async(keyword) => {
 
 // get the search history and display it in a user-friendly format
 export const displaySearchHistory = async() => {
-    const searchHistory = await readSearchHistory();
-    return ['Exit', ...searchHistory];
+    return await readSearchHistory();
 };
