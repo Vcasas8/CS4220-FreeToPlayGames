@@ -16,12 +16,15 @@ Objectives for cli.js
     + Passes the argument to the corresponding function in app.js
 */
 
+// Import the Command class from the commander package to create the CLI interface
 import { Command } from "commander";
+// Import the functions from app.js
 import { searchGames, showHistory } from "./app.js";
 
+// Create a new Command instance to define our CLI commands and options
 const program = new Command();
 
-// HELP MENU
+// Set the name, description, and version of the CLI tool for the help menu
 program
   .name("freetogame-cli")
   .description("CLI tool for searching FreeToGame API")
@@ -32,9 +35,11 @@ program
   .command("search <keyword>")
   .description("Search for games by keyword (e.g., 'shooter', 'fantasy', 'mmorpg')")
   .action(async (keyword) => {
+    // Call the searchGames function from app.js with the provided keyword
     try {
       console.log(`Searching for games related to: ${keyword}...\n`);
       await searchGames(keyword);
+      // The searchGames function will handle API calls and display results
     } catch (err) {
       console.error("Error running search command:", err.message);
     }
@@ -46,12 +51,12 @@ program
   .description("Show previously searched keywords")
   .action((arg) => {
     if (arg !== "keywords") {
-      console.error("Invalid argument. \nUse: history keywords");
+      console.error("Invalid argument. \nUse: 'history keywords' to view search history.");
       return;
-    }
-
+    } else {
     showHistory();
+    }
   });
 
-// Parse CLI arguments
+// Parse CLI arguments and execute the appropriate command based on user input
 program.parse(process.argv);
